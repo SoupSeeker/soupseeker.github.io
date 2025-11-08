@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>∴ Cyber Insights - The Seeker's Portal ∴</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .blog-hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--mid-bg) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--primary-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.1;
+            animation: float 20s linear infinite;
+        }
+        
+        .blog-hero__content {
+            text-align: center;
+            z-index: 10;
+        }
+        
+        .blog-hero__title {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .blog-hero__subtitle {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .back-home {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+            background: var(--mid-bg);
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            padding: 1rem 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            transition: all 0.3s ease;
+        }
+        
+        .back-home:hover {
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            box-shadow: 0 0 20px var(--primary-color);
+        }
+        
+        .featured-section {
+            padding: 4rem 2rem;
+            background: var(--mid-bg);
+        }
+        
+        .featured-article {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--dark-bg);
+            border: 2px solid var(--accent-color);
+            border-radius: 20px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-article::before {
+            content: '★';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: var(--accent-color);
+            font-size: 2rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 4rem auto 0;
+        }
+        
+        .stat-card {
+            background: var(--dark-bg);
+            border: 1px solid var(--primary-color);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            color: var(--light-text);
+            margin-top: 0.5rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-home">← Back to Portal</a>
+    
+    <canvas class="background-canvas" id="bgCanvas"></canvas>
+    
+    <main class="main">
+        <section class="blog-hero">
+            <div class="blog-hero__content">
+                <h1 class="blog-hero__title">◈ CYBER INSIGHTS</h1>
+                <p class="blog-hero__subtitle">
+                    Exploring the digital frontier of cybersecurity, privacy, and digital freedom. 
+                    Insights from the trenches of information security.
+                </p>
+            </div>
+        </section>
+        
+        <section class="featured-section">
+            <div class="section__container">
+                <h2 class="section__title">Featured Article</h2>
+                <div class="featured-article">
+                    <h3 style="color: var(--accent-color); font-family: 'Orbitron', monospace; margin-bottom: 1rem;">
+                        The Evolution of Zero Trust Architecture
+                    </h3>
+                    <p style="color: rgba(224, 224, 224, 0.8); line-height: 1.8;">
+                        As traditional network perimeters dissolve in our cloud-first world, Zero Trust Architecture 
+                        emerges as the new paradigm for cybersecurity. This comprehensive guide explores how organizations 
+                        can implement "never trust, always verify" principles to protect against modern threats.
+                    </p>
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <span style="background: var(--primary-color); color: var(--dark-bg); padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">Cybersecurity</span>
+                        <span style="color: var(--primary-color);">12 min read</span>
+                        <span style="color: var(--primary-color);">Nov 8, 2025</span>
+                    </div>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="articleCount">0</div>
+                        <div class="stat-label">Articles Published</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Accuracy Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Threat Monitoring</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section content-section--blog">
+            <div class="section__container">
+                <h2 class="section__title">All Articles</h2>
+                <div class="blog-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
+                    <button class="filter-btn" data-filter="privacy">Privacy</button>
+                    <button class="filter-btn" data-filter="tools">Tools</button>
+                </div>
+                <div class="blog-grid" id="blogGrid">
+                    <div class="no-articles">
+                        <p>No articles published yet. Check back soon for cybersecurity insights!</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">
+                            🔒 Future topics will include: Advanced Persistent Threats, Privacy-First Computing, 
+                            Quantum Cryptography, and Digital Forensics.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <script>
+        // Simplified blog functionality for standalone page
+        class BlogPage {
+            constructor() {
+                this.articles = JSON.parse(localStorage.getItem('cybersecurityArticles')) || [];
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.createBackgroundAnimation();
+                this.loadBlogArticles();
+                this.updateStats();
+            }
+
+            setupEventListeners() {
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                        e.target.classList.add('active');
+                        this.filterArticles(e.target.dataset.filter);
+                    });
+                });
+            }
+
+            createBackgroundAnimation() {
+                let particles = [];
+
+                new p5(function(p) {
+                    p.setup = function() {
+                        const canvas = p.createCanvas(p.windowWidth, p.windowHeight);
+                        canvas.parent('bgCanvas');
+                        
+                        for (let i = 0; i < 30; i++) {
+                            particles.push({
+                                x: p.random(p.width),
+                                y: p.random(p.height),
+                                vx: p.random(-0.3, 0.3),
+                                vy: p.random(-0.3, 0.3),
+                                size: p.random(1, 2),
+                                opacity: p.random(0.2, 0.6)
+                            });
+                        }
+                    };
+
+                    p.draw = function() {
+                        p.clear();
+                        
+                        particles.forEach(particle => {
+                            particle.x += particle.vx;
+                            particle.y += particle.vy;
+                            
+                            if (particle.x > p.width) particle.x = 0;
+                            if (particle.x < 0) particle.x = p.width;
+                            if (particle.y > p.height) particle.y = 0;
+                            if (particle.y < 0) particle.y = p.height;
+                            
+                            p.fill(0, 245, 255, particle.opacity * 255);
+                            p.noStroke();
+                            p.circle(particle.x, particle.y, particle.size);
+                        });
+                    };
+
+                    p.windowResized = function() {
+                        p.resizeCanvas(p.windowWidth, p.windowHeight);
+                    };
+                });
+            }
+
+            loadBlogArticles() {
+                const blogGrid = document.getElementById('blogGrid');
+                
+                if (this.articles.length === 0) {
+                    return; // Keep default content
+                }
+
+                blogGrid.innerHTML = this.articles.map(article => `
+                    <article class="blog-card" data-category="${article.category}">
+                        <div class="blog-card__header">
+                            <span class="blog-card__category">${article.category}</span>
+                            <span class="blog-card__date">${article.date}</span>
+                        </div>
+                        <h3 class="blog-card__title">${article.title}</h3>
+                        <p class="blog-card__summary">${article.summary}</p>
+                        <button class="read-more-btn" onclick="blogPage.openArticle(${article.id})">
+                            Read More →
+                        </button>
+                    </article>
+                `).join('');
+            }
+
+            filterArticles(category) {
+                const articles = document.querySelectorAll('.blog-card');
+                articles.forEach(article => {
+                    if (category === 'all' || article.dataset.category === category) {
+                        article.style.display = 'block';
+                    } else {
+                        article.style.display = 'none';
+                    }
+                });
+            }
+
+            openArticle(id) {
+                const article = this.articles.find(a => a.id === id);
+                if (!article) return;
+
+                const modal = document.createElement('div');
+                modal.className = 'article-modal';
+                modal.innerHTML = `
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>${article.title}</h2>
+                            <button class="close-btn" onclick="this.closest('.article-modal').remove()">×</button>
+                        </div>
+                        <div class="modal-meta">
+                            <span class="category-tag">${article.category}</span>
+                            <span class="date">${article.date}</span>
+                            <span class="read-time">${article.readTime} min read</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="article-content">${this.parseMarkdown(article.content)}</div>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+            }
+
+            parseMarkdown(text) {
+                return text
+                    .replace(/### (.*$)/gim, '<h3>$1</h3>')
+                    .replace(/## (.*$)/gim, '<h2>$1</h2>')
+                    .replace(/# (.*$)/gim, '<h1>$1</h1>')
+                    .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+                    .replace(/\*(.*)\*/gim, '<em>$1</em>')
+                    .replace(/`(.*?)`/gim, '<code>$1</code>')
+                    .replace(/\n/gim, '<br>');
+            }
+
+            updateStats() {
+                document.getElementById('articleCount').textContent = this.articles.length;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            window.blogPage = new BlogPage();
+        });
+    </script>
+</body>
+</html>

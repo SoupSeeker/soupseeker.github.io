@@ -1,151 +1,72 @@
-<!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Jake Tremblay</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>∴ The Seeker's Portal ∴</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav__orb" id="navOrb"></div>
+        <div class="nav__symbols">
+            <span class="nav__symbol" data-target="about">◯</span>
+            <span class="nav__symbol" data-target="projects">△</span>
+            <span class="nav__symbol" data-target="contact">◇</span>
+        </div>
+    </nav>
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+    <main class="main">
+        <canvas class="background-canvas" id="bgCanvas"></canvas>
+        
+        <section class="hero">
+            <div class="hero__container">
+                <h1 class="hero__title">
+                    <span class="hero__glyph">⟨</span>
+                    <span class="hero__text">SOUP SEEKER</span>
+                    <span class="hero__glyph">⟩</span>
+                </h1>
+                <div class="hero__subtitle">
+                    <span class="typing-text" id="typingText"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <div class="hero__orbs">
+                    <div class="orb orb--1" id="orb1"></div>
+                    <div class="orb orb--2" id="orb2"></div>
+                    <div class="orb orb--3" id="orb3"></div>
+                </div>
+            </div>
+        </section>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Jake Tremblay</a></h1>
-					</header>
+        <section class="content-section content-section--about" id="about">
+            <div class="section__container">
+                <h2 class="section__title">◯ THE WANDERER</h2>
+                <div class="floating-elements" id="aboutElements"></div>
+                <p class="section__text">A digital explorer seeking patterns in the chaos of code and creativity.</p>
+            </div>
+        </section>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+        <section class="content-section content-section--projects" id="projects">
+            <div class="section__container">
+                <h2 class="section__title">△ ARTIFACTS</h2>
+                <div class="project-grid" id="projectGrid"></div>
+            </div>
+        </section>
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<div class="logo"><span class="icon fa-gem"></span></div>
-							<h2>Hey, my name's Jake</h2>
-							<p>Here you will find some information about me and my life</p>
-						</div>
-					</section>
+        <section class="content-section content-section--contact" id="contact">
+            <div class="section__container">
+                <h2 class="section__title">◇ TRANSMISSIONS</h2>
+                <div class="contact-puzzle" id="contactPuzzle"></div>
+            </div>
+        </section>
 
-				<!-- Wrapper -->
-					<section id="wrapper">
+    </main>
 
-						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a class="image"><img src="images/thats_me.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">This is me</h2>
-										<p>I've spent the last few years of my life trying my best to improve my skills as a software developer. I completed Palomar College's computer science program in 2019 and began at California State University San Marcos in 2020 during the pandemic. </br>I currently am looking for work before I graduate next year in May.</p>
-									</div>
-								</div>
-							</section>
-
-						<!-- Two -->
-							<section id="two" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a class="image"><img src="images/haa.png" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Cybersecurity</h2>
-										<p>Since middle school days I have wanted to become a hacker. In the past few months I have taken up bug bounty and am currently using my free time to learn about emerging threats. I am currently an officer of the Cybersecurity Club for CSUSM.</p>
-										<a href="https://discord.gg/ZWg5b2jmeP" class="special">join the cybersecurity club</a> <!-- Send to cybersec club github -->
-									</div>
-								</div>
-							</section>
-
-						<!-- Three -->
-							<section id="three" class="wrapper spotlight style3">
-								<div class="inner">
-									<a class="image"><img src="images/create.png" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Creation is important</h2>
-										<p>We consume so much everyday; our attention being pulled in every direction. I recently have realized the importance of creation as a means of obtaining higher creativity and satisfaction in life. Whether it be art, code, or whatever-keep creating!</p>
-										<a href="https://www.instagram.com/soup_works/" class="special">check out my art</a>
-									</div>
-								</div>
-							</section>
-
-						<!-- Four
-
-							<section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Projects and Documents</h2>
-									<p>Things I am working on or have worked on that I want to highlight</p>
-									<section class="features">
-										<article>  resume or something
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>  project i like
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Nisl placerat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section>
-									<ul class="actions">
-										<li><a href="#" class="button">Browse All</a></li>
-									</ul>
-								</div>
-							</section>
-
-
-						-->
-
-					</section>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Where to find me</h2>
-							<p>Feel free to reach out via email, cell, follow my instagram, or just @ me on Twitter. </p>
-
-							<ul class="contact">
-								<li class="icon solid fa-home">
-									Jake Tremblay<br />
-									San Marcos, CA 92078<br />
-								</li>
-								<li class="icon solid fa-phone"></li>
-								<li class="icon solid fa-envelope"><a href="mailto:tremb008@csusm.edu">tremb008@csusm.edu</a></li>
-								<li class="icon brands fa-twitter"><a href="https://twitter.com/SoupSec">https://twitter.com/SoupSec</a></li>
-								<li class="icon brands fa-instagram"><a href="https://www.instagram.com/soup_works/">https://www.instagram.com/soup_works/</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Jake Tremblay 2022. All rights reserved. </li>
-							</ul>
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
 </html>

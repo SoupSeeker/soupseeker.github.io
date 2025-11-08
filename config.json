@@ -1,0 +1,100 @@
+{
+  "site": {
+    "title": "The Seeker's Portal",
+    "subtitle": "Digital Wanderer",
+    "author": "Soup Seeker",
+    "description": "A digital explorer seeking patterns in the chaos of code and creativity."
+  },
+  "navigation": {
+    "sections": [
+      {
+        "symbol": "◯",
+        "target": "about",
+        "title": "The Wanderer"
+      },
+      {
+        "symbol": "△", 
+        "target": "projects",
+        "title": "Artifacts"
+      },
+      {
+        "symbol": "◈",
+        "target": "blog", 
+        "title": "Cyber Insights"
+      },
+      {
+        "symbol": "◇",
+        "target": "contact",
+        "title": "Transmissions"
+      }
+    ]
+  },
+  "blog": {
+    "categories": [
+      "cybersecurity",
+      "privacy", 
+      "tools"
+    ],
+    "featuredArticle": {
+      "title": "The Evolution of Zero Trust Architecture",
+      "summary": "As traditional network perimeters dissolve in our cloud-first world, Zero Trust Architecture emerges as the new paradigm for cybersecurity.",
+      "category": "cybersecurity",
+      "readTime": 12
+    }
+  },
+  "projects": [
+    {
+      "title": "Neural Network Visualizer",
+      "description": "Interactive visualization of artificial neural networks with real-time learning algorithms.",
+      "tech": ["JavaScript", "P5.js", "ML"],
+      "link": "#"
+    },
+    {
+      "title": "Cryptographic Playground", 
+      "description": "Educational tool for exploring various encryption algorithms and cryptographic concepts.",
+      "tech": ["Python", "Cryptography", "Web"],
+      "link": "#"
+    },
+    {
+      "title": "Quantum Computing Simulator",
+      "description": "Browser-based quantum circuit simulator with educational quantum algorithms.",
+      "tech": ["JavaScript", "Quantum", "WebGL"],
+      "link": "#"
+    }
+  ],
+  "contact": {
+    "puzzle": {
+      "pieces": ["G", "I", "T", "H", "U", "B", "@", "M", "E"],
+      "solution": "GITHUB@ME",
+      "successMessage": "🎉 Found me! Check GitHub! 🎉"
+    }
+  },
+  "animations": {
+    "typingMessages": [
+      "Digital Wanderer",
+      "Code Architect",
+      "Cybersecurity Researcher", 
+      "Privacy Advocate",
+      "System Explorer"
+    ],
+    "particles": {
+      "count": 50,
+      "speed": 0.5,
+      "connectionDistance": 100
+    }
+  },
+  "theme": {
+    "colors": {
+      "primary": "#00f5ff",
+      "secondary": "#ff6b9d", 
+      "accent": "#ffd23f",
+      "darkBg": "#0a0a0f",
+      "midBg": "#1a1a2e",
+      "lightText": "#e0e0e0"
+    },
+    "fonts": {
+      "primary": "Space Mono",
+      "heading": "Orbitron"
+    }
+  }
+}
